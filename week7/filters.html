@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <style>
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+    .wrapper img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+    .wrapper h1{
+        padding: 1.5em;
+        background-color: hsl(0 100% 100% / 55%);
+        backdrop-filter: blur(10px);
+        z-index: 1;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 1px solid black;
+        
+    }
+    h1::after{
+        animation: pulse 1000ms linear 2000ms infinite reverse forwards;
+    }
+    h1::after{
+        content: "its monday again";
+        place-items: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        border-radius: 14px;
+        background-color: rgba(216, 82, 82, 0.418);
+    }
+
+    @keyframes pulse {
+        15%{
+           opacity: 0;
+        }
+        50%{
+            transform: scale(0.4);
+            opacity: 0.2;
+        }
+    }
+    </style>
+</head>
+<body>
+   <div class="wrapper">
+    <h1>this is how i spend the whole day</span></h1>
+    <img src="pathway.jpg" alt="pathway">
+   </div> 
+</body>
+</html>

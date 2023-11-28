@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            width: 100%;
+            height: 70vh;
+            position: relative;
+            border: 1px solid grey
+        }
+        .wrapper img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+        .wrapper h1 {
+            padding: 1.5em;
+            background: hsl(0 100% 100% / 55%);
+            backdrop-filter: blur(1px);
+            z-index: 1;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 180px;
+        }
+
+        .blessing {
+            border: 1px solid grey;
+            width: 90vw;
+            height: 60vh;
+            margin-top: 5px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+
+        .monicah img {
+            margin: 10px;
+            width: 90%;
+            height: auto;
+        }
+
+        .cynthia {
+            /* filter: blur(5rem) */
+            /* filter: brightness(90%) */
+            /* filter: contrast(80%) */
+            /* filter: grayscale(1); */
+            filter: invert(0); /* value is zero or one */
+        /* opacity, saturate, sepia, hue-rotate, drop-shadow */
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>We are the class shakers: Olabisi Adekoya</h1>
+        <img src="https://res.cloudinary.com/leomiscoding/image/upload/v1677018512/pexels-photo-5699458.jpg" alt="...">
+    </div>
+
+    <div class="blessing">
+
+        <div class="monicah">
+            <img src="../weekOne/images/food.jpg" alt="">
+        </div>
+
+        <div class="monicah">
+            <img src="../weekOne/images/food.jpg" alt="" class="cynthia">
+        </div>
+
+    </div>
+</body>
+</html>

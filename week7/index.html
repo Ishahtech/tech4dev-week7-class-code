@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <style>
+.parent{
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    overflow: scroll;
+    border: 1px solid black;
+    display: grid;
+    place-items: center;
+    resize: both;
+    
+}
+.child{
+    width: calc(100% - 2rem);
+    background-color: papayawhip;
+    border: 1px solid gold;
+    font-size: clamp(2rem, 1rem + 3vw, 3rem);
+}
+    </style>
+</head>
+<body>
+    <h1>Calc()</h1>
+    <div class="parent">
+        <p class="child">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, accusamus recusandae saepe quos nobis amet velit. Veniam exercitationem aspernatur consequuntur adipisci est in tempore iure ratione, quo velit iusto cupiditate.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga, accusamus recusandae saepe quos nobis amet velit. Veniam exercitationem aspernatur consequuntur adipisci est in tempore iure ratione, quo velit iusto cupiditate.
+        </p>
+    </div>
+</body>
+</html>

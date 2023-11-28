@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+</head>
+<style>
+    .body {
+        display: grid;
+        place-items: center;
+    }
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+        margin-top: 100px;
+    }
+
+    .square{
+        width: 100px;
+        height: 100px;
+        border-radius: 8px;
+        background-color: black;
+        color: white;
+        /* transition-duration: 600ms; */
+        transition-timing-function: ease;
+        padding: 8px;
+    }
+    .wrapper .square:nth-child(odd){
+        justify-self: end;
+    }
+    .wrapper .square:nth-child(even){
+        justify-self: start;
+    }
+    .square.tnone {
+        transition-property: none;
+    }
+    .square.ttransform {
+        transition-property: transform;
+        transition-duration: 1000ms;
+    }
+    .square.tcolor {
+        /* transition-property: background-color; */
+        transition-property: transform;
+        transition-duration: 1600ms;
+    }
+    .square.both {
+        transition-property: all;
+    }
+    .square:is(:hover, :focus){
+        transform: scale(1.3);
+        background-color: grey;
+        color: black;
+    }
+    .rectangle {
+        width: 150px;
+        height: 50px;
+        background-color: gold;
+        border-radius: 8px;
+        border: 5px solid gold;
+    }
+
+    .rectangle:is(:hover, :focus){
+        background-color: transparent;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+        .hh{
+            transition: none;
+        }
+    }
+    @media (prefers-reduced-motion: no-preference){
+        .hhhh{
+            transition: transform 250ms ease;
+        }
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="square tnone">Chizaram Anisimuo</div>
+        <div class="square ttransform">Joy Abel</div>
+        <div class="square tcolor">Ooreofe Lawanson</div>
+        <div class="square both">Olabisi Adekoya</div>
+    </div>
+
+    <div class="wrapper">
+        <div class="rectangle h">Chizaram Anisimuo</div>
+        <div class="rectangle hh">Joy Abel</div>
+        <div class="rectangle hhh">Ooreofe Lawanson</div>
+        <div class="rectangle hhhh">Olabisi Adekoya</div>
+    </div>
+</body>
+</html>

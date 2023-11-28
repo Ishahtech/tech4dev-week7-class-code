@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Z-Index & Stacking Content</title>
+    <style>
+      /* this is the normal flow without grid/flex */
+      /* .wrapper {
+position: relative;
+display: flex;
+flex-direction: column;
+}
+.wrapper > * {
+width: 250px;
+height: 200px;
+}
+.wrapper > * + * {
+margin-top: -150px;
+opacity: 0.8;
+box-shadow: 0 -1px 10px rgba(0 0 0 / 60%);
+}
+.wrapper > :first-child{
+background-color: linear-gradient(to right, rgb(76, 0, 255) , rgb(173, 173, 87)) ;
+border: 2px solid rgb(255, 0, 81);
+z-index: 6;
+}
+.wrapper > :nth-child(2){
+background-color: pink;
+border: 2px solid hotpink;
+z-index: 1;
+}
+.wrapper > :last-child{
+background-color: wheat;
+border: 2px solid yellowgreen;
+ z-index: 4;
+} */
+      grid layout
+      .wrapper {
+        display: grid;
+        grid-template-columns: repeat(5, 100px);
+        max-width: 500px;
+      }
+      .wrapper > * {
+        width: 250px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 1em;
+        opacity: 0.75;
+        box-shadow: 0 -1px 10px rgba(0 0 0 / 60%);
+      }
+      .wrapper > :first-child {
+        background-color: cornsilk;
+        border: 2px solid gold;
+        z-index: 3;
+        grid-column: 1/2;
+      }
+      .wrapper > :nth-child(2) {
+        background-color: pink;
+        border: 2px solid hotpink;
+        z-index: 1;
+        grid-column: 3/4;
+      }
+      .wrapper > :last-child {
+        background-color: wheat;
+        border: 2px solid yellow;
+        z-index: 2;
+        grid-column: 4/5;
+      }
+      /* .box {
+        background: rgb(10 67 159);
+      }
+      .box .child {
+        position: relative;
+        z-index: -1;
+        background: pink;
+        border: 1px solid hotpink;
+        padding: 1rem;
+        width: 275px;
+      }
+      .child {
+        font-weight: 900;
+      }
+      .top,
+      .bottom {
+        width: 250px;
+        padding: 80px 20px;
+        position: relative;
+      }
+      .inner {
+        padding: 20px;
+        background-color: wheat;
+        border: 2px solid gold;
+      }
+      .top {
+        z-index: 1;
+        background-color: green;
+        border: 2px solid springgreen;
+      }
+      .bottom {
+        z-index: 2;
+        margin-top: -90px;
+        opacity: 0.8;
+        box-shadow: 0 -1px 10px rgba(0 0 0 / 60%);
+        background-color: coral;
+        border: 22px solid brown;
+      }
+      .top > .inner {
+        z-index: 999;
+      }
+      .bottom > .inner {
+        z-index: 2;
+      } */
+    </style>
+  </head>
+  <body>
+    <h1>z-index</h1>
+    <div class="wrapper">
+      <div>ontop</div>
+      <div>z-index 1</div>
+      <div>z-index 2</div>
+    </div>
+    <hr />
+    <h1>Negative Z-Index</h1>
+    <div class="box">
+      <div class="child">I will answer a million times</div>
+    </div>
+    <h2>Stacking Content</h2>
+    <div class="grandParent">
+      <div class="top">
+        <code>z-index of 1</code>
+        <div class="inner">
+          <code>z-index of 999</code>
+        </div>
+      </div>
+      <div class="bottom">
+        <code>z-index of 2</code>
+        <div class="inner">
+          <code>z-index of 2</code>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

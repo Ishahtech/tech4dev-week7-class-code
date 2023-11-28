@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 500PX;
+        }
+        .circle{
+            clip-path: circle(25%);
+        }
+        
+        .ola{
+            clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+        }
+    </style>
+</head>
+<body>
+    <h1>Shapes</h1>
+    <div class="container">
+        <div class="circle">
+            <img src="pathway.jpg" alt="woman">
+        </div>
+        <div class="ola">
+            <h2>woman</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At quisquam quasi non ipsa, perferendis nesciunt magnam voluptatem asperiores sequi ipsam, enim, iure dolorem. Quam ad laboriosam impedit nesciunt ratione obcaecati?</p>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
